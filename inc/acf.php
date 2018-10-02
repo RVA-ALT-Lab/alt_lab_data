@@ -115,7 +115,7 @@ acf_add_local_field_group(array(
 					'role' => '',
 					'allow_null' => 0,
 					'multiple' => 0,
-					'return_format' => 'array',
+					'return_format' => 'object',
 				),
 				array(
 					'key' => 'field_5b73278a305df',

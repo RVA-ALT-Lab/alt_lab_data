@@ -198,11 +198,31 @@ function project_faculty(){
   $terms = wp_get_post_terms( $post_id, 'faculty');
   if ($terms){
     foreach ( $terms as $term ) {
-        echo $term->slug;
+        echo $term->slug; //build this out for archive sorting
+        ///?departments=foo
     }
   }
 }
 
+function project_department(){
+  global $post;
+  $post_id = $post->ID;
+  $terms = wp_get_post_terms( $post_id, 'departments');
+  if ($terms){
+    foreach ( $terms as $term ) {
+        echo $term->slug; //build this out for archive sorting
+        ///?departments=foo
+    }
+  }
+}
 
-
-
+function alt_lab_lead(){
+   if (have_rows('alt_lab_specific_information')):
+      while( have_rows('alt_lab_specific_information') ): the_row() ;
+         $leads = get_sub_field('alt_lab_lead');
+          if ($leads){
+            echo $leads->display_name;            
+       }
+      endwhile;
+    endif;
+}
