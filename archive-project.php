@@ -16,7 +16,7 @@ $container   = get_theme_mod( 'understrap_container_type' );
 
 <div class="wrapper" id="archive-wrapper">
 
-	<div class="<?php echo esc_attr( $container ); ?>" id="content" tabindex="-1">
+	<div class="container" id="content" tabindex="-1">
 
 		<div class="row">
 
@@ -27,9 +27,10 @@ $container   = get_theme_mod( 'understrap_container_type' );
 
 				<?php if ( have_posts() ) : ?>
 
-					<header class="page-header">foo proj
+					<header class="page-header">
 						<?php
-						the_archive_title( '<h1 class="page-title">', '</h1>' );
+						//the_archive_title( '<h1 class="page-title">', '</h1>' );
+						echo '<h1>Projects</h1>';
 						the_archive_description( '<div class="taxonomy-description">', '</div>' );
 						?>
 					</header><!-- .page-header -->
@@ -44,7 +45,7 @@ $container   = get_theme_mod( 'understrap_container_type' );
 						 * If you want to override this in a child theme, then include a file
 						 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
 						 */
-						get_template_part( 'loop-templates/content', get_post_format() );
+						get_template_part( 'loop-templates/content-project', get_post_format() );
 						?>
 
 					<?php endwhile; ?>
@@ -59,9 +60,6 @@ $container   = get_theme_mod( 'understrap_container_type' );
 
 			<!-- The pagination component -->
 			<?php understrap_pagination(); ?>
-
-		<!-- Do the right sidebar check -->
-		<?php get_template_part( 'global-templates/right-sidebar-check' ); ?>
 
 	</div> <!-- .row -->
 

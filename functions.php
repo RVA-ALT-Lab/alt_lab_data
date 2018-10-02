@@ -179,3 +179,30 @@ add_action('login_enqueue_scripts', 'data_acf_admin_theme_style');
 
 //ACF FUNCTIONS
 
+
+function project_description(){
+  if (have_rows('basic_project_information')):
+      while( have_rows('basic_project_information') ): the_row() ;
+        $description = get_sub_field('project_description');
+        return $description;
+      endwhile;
+    endif;
+       
+}
+
+
+
+function project_faculty(){
+  global $post;
+  $post_id = $post->ID;
+  $terms = wp_get_post_terms( $post_id, 'faculty');
+  if ($terms){
+    foreach ( $terms as $term ) {
+        echo $term->slug;
+    }
+  }
+}
+
+
+
+
