@@ -165,3 +165,17 @@ function bannerMaker(){
 
     } 
 }
+
+
+//custom admin css
+function data_acf_admin_theme_style() {
+    wp_enqueue_style('data-acf-admin-theme',  get_template_directory_uri() . '/css/data-acf-admin-theme.css', array(), '1.1.1', false );
+}
+
+
+add_action('admin_enqueue_scripts', 'data_acf_admin_theme_style');
+add_action('login_enqueue_scripts', 'data_acf_admin_theme_style');
+
+
+//ACF FUNCTIONS
+

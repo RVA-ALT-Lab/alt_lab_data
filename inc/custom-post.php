@@ -42,7 +42,7 @@ function create_project_cpt() {
     'description' => __( '', 'textdomain' ),
     'labels' => $labels,
     'menu_icon' => '',
-    'supports' => array('title', 'editor', 'revisions', 'author', 'trackbacks', 'custom-fields', 'thumbnail',),
+    'supports' => array('title', 'revisions', 'author', 'trackbacks', 'custom-fields', 'thumbnail',),
     'taxonomies' => array(),
     'public' => true,
     'show_ui' => true,
