@@ -17,13 +17,14 @@
 
 		<div class="alt-lab-lead data"><?php alt_lab_lead();?></div>
 		<div class="department data"><?php project_department();?></div>
+		<div class="design data"><?php alt_lab_design_pattern();?></div>
 		<div class="data">
-			<a class="btn btn-primary" data-toggle="collapse" href="#projectDetails-<?php echo $post->ID?>" role="button" aria-expanded="false" aria-controls="collapseExample">+</a>
+			<a class="btn btn-primary btn-data" data-toggle="collapse" href="#projectDetails-<?php echo $post->ID?>" role="button" aria-expanded="false" aria-controls="collapseExample">+</a>
    		</div>
 		<div class="collapse" id="projectDetails-<?php echo $post->ID?>">
 		  <div class="card card-body">
-		   <div class="faculty data"><?php project_faculty();?></div>
-		   		<?php echo project_description();?>
+		        <div class="faculty-accordion">Faculty: <?php project_faculty();?></div>
+		   		<div class="description-accordion"><?php echo project_description();?></div>
 		  </div>
 		</div>
 		

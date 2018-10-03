@@ -154,19 +154,6 @@ if ( function_exists('register_sidebar') )
   }
 
 
-function bannerMaker(){
-	global $post;
-	 if ( get_the_post_thumbnail_url( $post->ID ) ) {
-      //$thumbnail_id = get_post_thumbnail_id( $post->ID );
-      $thumb_url = get_the_post_thumbnail_url($post->ID);
-      //$alt = get_post_meta($thumbnail_id, '_wp_attachment_image_alt', true);
-
-        return '<div class="jumbotron custom-header-img" style="background-image:url('. $thumb_url .')"></div>';
-
-    } 
-}
-
-
 //custom admin css
 function data_acf_admin_theme_style() {
     wp_enqueue_style('data-acf-admin-theme',  get_template_directory_uri() . '/css/data-acf-admin-theme.css', array(), '1.1.1', false );
@@ -198,8 +185,7 @@ function project_faculty(){
   $terms = wp_get_post_terms( $post_id, 'faculty');
   if ($terms){
     foreach ( $terms as $term ) {
-        echo $term->slug; //build this out for archive sorting
-        ///?departments=foo
+        echo '<a href="?faculty=' . $term->slug . '">' . $term->name . '</a>'; //build this out for archive sorting
     }
   }
 }
@@ -210,7 +196,7 @@ function project_department(){
   $terms = wp_get_post_terms( $post_id, 'departments');
   if ($terms){
     foreach ( $terms as $term ) {
-        echo $term->slug; //build this out for archive sorting
+        echo '<a href="?departments=' . $term->slug . '">' . $term->slug . '</a><br>'; //build this out for archive sorting
         ///?departments=foo
     }
   }
@@ -226,3 +212,18 @@ function alt_lab_lead(){
       endwhile;
     endif;
 }
+
+
+function alt_lab_design_pattern(){
+   if (have_rows('course_specific')):
+      while( have_rows('course_specific') ): the_row() ;
+         $pattern = get_sub_field('design_pattern');
+           if ($pattern){
+            echo $pattern[0];            
+          }
+      endwhile;
+    endif;
+}
+
+
+
