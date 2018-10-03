@@ -196,7 +196,7 @@ function project_department(){
   $terms = wp_get_post_terms( $post_id, 'departments');
   if ($terms){
     foreach ( $terms as $term ) {
-        echo '<a href="?departments=' . $term->slug . '">' . $term->slug . '</a><br>'; //build this out for archive sorting
+        echo '<a href="?departments=' . $term->slug . '">' . $term->name . '</a><br>'; //build this out for archive sorting
         ///?departments=foo
     }
   }
@@ -207,11 +207,36 @@ function alt_lab_lead(){
       while( have_rows('alt_lab_specific_information') ): the_row() ;
          $leads = get_sub_field('alt_lab_lead');
           if ($leads){
-            echo $leads->display_name;            
+            echo '<a href="' . get_author_posts_url( $leads->ID) . '">' . $leads->display_name . '</a>';            
        }
       endwhile;
     endif;
 }
+
+// function alt_author_project ( $post_id, $post) {
+//      $post_type = get_post_type($post_id);
+//      if ( 'project' != $post_type ) return;
+
+//     if (have_rows('alt_lab_specific_information', $post_id)):
+//           while( have_rows('alt_lab_specific_information', $post_id) ): the_row() ;
+//              $leads = get_sub_field('alt_lab_lead', $post_id);
+//               if ($leads){
+//                $author = $leads->ID;            
+//            }
+//           endwhile;
+//         endif;
+
+//     remove_action( 'save_post', 'alt_author_project' );
+//       $arg = array(
+//         'ID' => $post->ID,
+//         'post_author' => $author,
+//     );
+//     wp_update_post( $arg );
+//    add_action( 'save_post', 'alt_author_project' );
+// }
+// add_action( 'save_post', 'alt_author_project', 2 );
+
+
 
 
 function alt_lab_design_pattern(){
