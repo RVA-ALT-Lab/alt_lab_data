@@ -16,12 +16,12 @@ $container   = get_theme_mod( 'understrap_container_type' );
 
 <div class="wrapper" id="archive-wrapper">
 
-	<div class="container" id="content" tabindex="-1">
+	<div class="container-fluid" id="content" tabindex="-1">
 
 		<div class="row">
 
 			<!-- Do the left sidebar check -->
-			<?php get_template_part( 'global-templates/left-sidebar-check' ); ?>
+			<div class="col-md-10 offset-md-1 content-area" id="primary">
 
 			<main class="site-main" id="main">
 

@@ -12,7 +12,7 @@
 
 	<div class="entry-content project-archive data-holder">
 		
-		<?php the_title( sprintf( '<h2 class="entry-title data-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ),
+		<?php the_title( sprintf( '<h2 class="entry-title data-title data"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ),
 		'</a></h2>' ); ?>
 
 		<div class="alt-lab-lead data"><?php alt_lab_lead();?></div>
