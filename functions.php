@@ -213,28 +213,33 @@ function alt_lab_lead(){
     endif;
 }
 
-// function alt_author_project ( $post_id, $post) {
-//      $post_type = get_post_type($post_id);
-//      if ( 'project' != $post_type ) return;
 
-//     if (have_rows('alt_lab_specific_information', $post_id)):
-//           while( have_rows('alt_lab_specific_information', $post_id) ): the_row() ;
-//              $leads = get_sub_field('alt_lab_lead', $post_id);
-//               if ($leads){
-//                $author = $leads->ID;            
-//            }
-//           endwhile;
-//         endif;
+//change author to whoever is the lead for the project
+function alt_author_project ( $post_id ) {
+     $post_type = get_post_type($post_id);
+     if ( 'project' != $post_type ) return;
 
-//     remove_action( 'save_post', 'alt_author_project' );
-//       $arg = array(
-//         'ID' => $post->ID,
-//         'post_author' => $author,
-//     );
-//     wp_update_post( $arg );
-//    add_action( 'save_post', 'alt_author_project' );
-// }
-// add_action( 'save_post', 'alt_author_project', 2 );
+    if (have_rows('alt_lab_specific_information', $post_id)):
+          while( have_rows('alt_lab_specific_information', $post_id) ): the_row() ;
+             $leads = get_sub_field('alt_lab_lead', $post_id);
+              if ($leads){
+               $author = $leads->ID;            
+           }
+          endwhile;
+        endif;
+
+    remove_action( 'save_post', 'alt_author_project' );
+    
+    $arg = array(
+        'ID' => $post_id,
+        'post_author' => $author,
+    );
+    
+    wp_update_post( $arg );
+    
+    add_action( 'save_post', 'alt_author_project');
+}
+add_action( 'save_post', 'alt_author_project');
 
 
 
@@ -244,11 +249,20 @@ function alt_lab_design_pattern(){
       while( have_rows('course_specific') ): the_row() ;
          $pattern = get_sub_field('design_pattern');
            if ($pattern){
-            echo $pattern[0];            
+            echo $pattern;            
           }
       endwhile;
     endif;
 }
 
 
-
+//add project to author page
+function wpbrigade_author_custom_post_types( $query ) {
+  if( is_author() && empty( $query->query_vars['suppress_filters'] ) ) {
+    $query->set( 'post_type', array(
+     'post', 'project'
+    ));
+    return $query;
+  }
+}
+add_filter( 'pre_get_posts', 'wpbrigade_author_custom_post_types' );

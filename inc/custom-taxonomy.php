@@ -27,7 +27,7 @@ function create_tag_taxonomies()
   register_taxonomy('faculty',array('project','faculty','workshop'), array(
     'hierarchical' => false,
     'labels' => $labels,
-    'show_ui' => true,
+    'show_ui' => false,
     'update_count_callback' => '_update_post_term_count',
     'query_var' => true,
     'rewrite' => array( 'slug' => 'faculty' ),
@@ -65,7 +65,7 @@ function create_dept_taxonomies()
   register_taxonomy('departments',array('project','faculty'), array(
     'hierarchical' => true,
     'labels' => $labels,
-    'show_ui' => true,
+    'show_ui' => false,
     'update_count_callback' => '_update_post_term_count',
     'query_var' => true,
     'rewrite' => array( 'slug' => 'department' ),
