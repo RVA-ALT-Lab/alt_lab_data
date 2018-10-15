@@ -256,6 +256,41 @@ function alt_lab_design_pattern(){
 }
 
 
+
+function acf_fetch_work_start_date(){
+  global $post;
+  $html = '';
+  $work_start_date = get_field('work_start_date');
+
+    if( $work_start_date) {      
+      $html = $work_start_date;  
+      return $html;    
+    }
+
+}
+
+
+function acf_fetch_launch_date(){
+  global $post;
+  $html = '';
+  $launch_date = get_field('launch_date');
+
+    if( $launch_date) {      
+      $html = $launch_date;  
+     return $html;    
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
 //add project to author page
 function wpbrigade_author_custom_post_types( $query ) {
   if( is_author() && empty( $query->query_vars['suppress_filters'] ) ) {

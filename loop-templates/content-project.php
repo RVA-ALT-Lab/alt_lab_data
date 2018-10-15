@@ -27,7 +27,11 @@
 		   		<div class="description-accordion"><?php echo project_description();?></div>
 		  </div>
 		</div>
-		
+		<div class="project-updates">
+			<div class="start-date">Start Date: <?php echo acf_fetch_work_start_date();?></div>
+			<div class="start-date">Launch Date: <?php echo acf_fetch_launch_date();?></div>
+
+		</div>
 
 
 		
