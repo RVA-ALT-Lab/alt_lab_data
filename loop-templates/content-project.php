@@ -18,21 +18,19 @@
 		<div class="alt-lab-lead data"><?php alt_lab_lead();?></div>
 		<div class="department data"><?php project_department();?></div>
 		<div class="design data"><?php alt_lab_design_pattern();?></div>
-		<div class="data">
-			<a class="btn btn-primary btn-data" data-toggle="collapse" href="#projectDetails-<?php echo $post->ID?>" role="button" aria-expanded="false" aria-controls="collapseExample">+</a>
-   		</div>
-		<div class="collapse" id="projectDetails-<?php echo $post->ID?>">
-		  <div class="card card-body">
-		        <div class="faculty-accordion">Faculty: <?php project_faculty();?></div>
-		   		<div class="description-accordion"><?php echo project_description();?></div>
-		  </div>
-		</div>
-		<div class="project-updates">
-			<div class="start-date">Start Date: <?php echo acf_fetch_work_start_date();?></div>
-			<div class="start-date">Launch Date: <?php echo acf_fetch_launch_date();?></div>
-
+		
+		<div class="project-dates">
+			<h2>Time:</h2>
+			<ul>
+				<li class="start-date">Start Date: <?php echo acf_fetch_work_start_date();?></li>
+				<li class="start-date">Due Date: <?php echo acf_fetch_due_date();?></li>			
+				<li class="start-date">Launch Date: <?php echo acf_fetch_launch_date();?></li>
+			</ul>
 		</div>
 
+		<div class="faculty-accordion">Faculty: <?php project_faculty();?></div>
+		<div class="description-accordion">Description: <?php echo project_description();?></div>
+		
 
 		
 	</div><!-- .entry-content -->

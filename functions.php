@@ -284,6 +284,20 @@ function acf_fetch_launch_date(){
 
 
 
+function acf_fetch_due_date(){
+  global $post;
+  $html = '';
+  $due_date = get_field('due_date');
+
+    if( $due_date) {      
+      $html = $due_date;  
+     return $html;    
+    }
+
+}
+
+
+
 
 
 
