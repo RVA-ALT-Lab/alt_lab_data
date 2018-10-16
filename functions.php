@@ -302,17 +302,13 @@ function acf_fetch_updates(){
   if($values)
   {
     echo '<ul>';
-
     foreach($values as $value)
     {
       echo '<li>' . $value['update_date'] . ' ' . $value['update_details'] . '</li>';
     }
-
     echo '</ul>';
   }
 }
-
-
 
 
 
