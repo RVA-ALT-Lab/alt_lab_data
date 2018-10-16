@@ -79,48 +79,6 @@ p {
 	background-size: cover;
 }
 
-//BACKGROUND
-#full-width-page-wrapper {
-	background-image: url(../imgs/topo-right-30.png);
-	background-repeat: no-repeat;
-	background-position: right;
-	background-size: 400px 800px;
-	background-attachment: fixed;
-}
-
-
-//SUB ORGS
-.jumbotron.water {
-  background: url(../imgs/topographic-background-2-white.svg), linear-gradient(rgba(0, 179, 190, 0), rgba(158, 158, 158, 1));
-  background-repeat: no-repeat; 
-  background-size: cover; 
-  background-color: rgba(0,0,0,0);
-}
-
-.water .card-img-top {
-	border-radius: 50%;
-	border: 2px solid $white;
-	width: 80%;
-	height: auto;
-	margin: 0 auto;
-}
-
-.water .card-title {
-	background-color: $white;
-	padding: .2em;
-	display: inline-block;
-	text-align: center;
-	font-size: 1.5em;
-	height: 3em;
-	width: 100%;
-	margin: 0 auto;
-}
-
-.water .card {
-	height: 100%;
-	background-color: rgba(0,0,0,0);
-	border: none;
-}
 
 
 //PROJECT
@@ -129,6 +87,12 @@ p {
   margin: 10px 10px 10px 0;
   padding: 10px;
 }
+
+.updates-list {
+   display: flex;
+  flex-direction: column-reverse;
+}
+
 
 //FOOTER 
 #wrapper-footer {

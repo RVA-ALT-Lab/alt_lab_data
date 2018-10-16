@@ -301,7 +301,7 @@ function acf_fetch_updates(){
   $values = get_field('updates');
   if($values)
   {
-    echo '<ul>';
+    echo '<ul class="updates-list">';
     foreach($values as $value)
     {
       echo '<li>' . $value['update_date'] . ' ' . $value['update_details'] . '</li>';

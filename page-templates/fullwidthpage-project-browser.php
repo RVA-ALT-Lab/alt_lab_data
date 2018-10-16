@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: WORKSHOP BROWSER
+ * Template Name: PROJECT BROWSER
  *
  * Template for displaying a page without sidebar even if a sidebar widget is published.
  *
@@ -50,9 +50,9 @@ $container = get_theme_mod( 'understrap_container_type' );
 						<div class="facet-box">
 							<h3 class="filter-lead">Filter projects by</h3>
 							<h3>Lead</h3>
-							<?php echo facetwp_display( 'facet', 'workshop_concepts');?>	
+							<?php echo facetwp_display( 'facet', 'project_lead');?>	
 							<h3>Type</h3>
-							<?php echo facetwp_display( 'facet', 'workshop_tools' );?>
+							<?php echo facetwp_display( 'facet', 'project_type' );?>
 						</div>	
 					</div>
 					<div class="col-md-8 facet-holder">
