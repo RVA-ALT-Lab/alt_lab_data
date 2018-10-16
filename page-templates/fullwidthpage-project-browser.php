@@ -46,20 +46,19 @@ $container = get_theme_mod( 'understrap_container_type' );
 	<div class="entry-content">
 			<div class="container">
 				<div class="row">			
-					<div class="col-md-4 facet-facets">
+					<div class="col-md-2 facet-facets">
 						<div class="facet-box">
-							<h3 class="filter-lead">Filter projects by</h3>
 							<h3>Lead</h3>
 							<?php echo facetwp_display( 'facet', 'project_lead');?>	
 							<h3>Type</h3>
 							<?php echo facetwp_display( 'facet', 'project_type' );?>
 						</div>	
 					</div>
-					<div class="col-md-8 facet-holder">
+					<div class="col-md-10 facet-holder">
 							<?php echo facetwp_display( 'template', 'projects' );?>
-							<?php echo do_shortcode('[facetwp pager="true"]') ;?>
-							<button class="btn btn-alp btn-dark" value="Reset" onclick="FWP.reset()" class="facet-reset" />Reset Filters</button>
+							<?php echo do_shortcode('[facetwp pager="true"]') ;?>							
 					</div>
+					<button class="btn btn-alp btn-dark" value="Reset" onclick="FWP.reset()" class="facet-reset" />Reset Filters</button>
 				</div>
 			</div>	
 		</div>
