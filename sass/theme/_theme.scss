@@ -95,15 +95,29 @@ p {
 
 //facet project 
 
+.facet-title {
+  font-size: 1.2em;
+  font-weight: 300;
+}
+
 .facet-workshop {
   margin-bottom: 10px;
   border-top: 1px solid #efefef;
   padding: 10px 0;
 }
 
+.facet-workshop:hover {
+  background-color: #91cbf9;
+}
+
 .facet-data {
   display: inline-block;
+}
 
+.workshop-title a {
+  display: inline-block;
+  width: 100%;
+  height: auto;
 }
 
 //FOOTER 

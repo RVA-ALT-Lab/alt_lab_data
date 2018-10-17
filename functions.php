@@ -312,6 +312,18 @@ function acf_fetch_updates(){
 }
 
 
+function acf_count_updates(){
+  $values = get_field('updates');
+  $count = 0;
+  if($values)
+  {
+    foreach($values as $value)
+    {
+     $count++;
+    }
+   echo ' (' . $count . ')';
+  }
+}
 
 
 
