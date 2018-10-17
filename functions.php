@@ -217,7 +217,7 @@ function alt_lab_lead(){
 //change author to whoever is the lead for the project
 function alt_author_project ( $post_id ) {
      $post_type = get_post_type($post_id);
-     if ( 'project' != $post_type ) return;
+    if ( 'project' != $post_type || get_post_status( $post_id ) != 'publish' ) return;
 
     if (have_rows('alt_lab_specific_information', $post_id)):
           while( have_rows('alt_lab_specific_information', $post_id) ): the_row() ;
@@ -225,7 +225,8 @@ function alt_author_project ( $post_id ) {
               if ($leads){
                $author = $leads->ID;            
            }
-         
+          endwhile;
+    endif;
 
     remove_action( 'save_post', 'alt_author_project' );
     
@@ -237,8 +238,7 @@ function alt_author_project ( $post_id ) {
     wp_update_post( $arg );
     
     add_action( 'save_post', 'alt_author_project');
-     endwhile;
-        endif;
+    
 }
 add_action( 'save_post', 'alt_author_project');
 
@@ -282,7 +282,6 @@ function acf_fetch_launch_date(){
     }
 
 }
-
 
 
 function acf_fetch_due_date(){
