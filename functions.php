@@ -207,7 +207,7 @@ function alt_lab_lead(){
       while( have_rows('alt_lab_specific_information') ): the_row() ;
          $leads = get_sub_field('alt_lab_lead');
           if ($leads){
-            echo '<a href="' . get_author_posts_url( $leads->ID) . '">' . $leads->display_name . '</a>';            
+            echo $leads['display_name'];   //$leads->display_name ************ caution will robinson         
        }
       endwhile;
     endif;
@@ -223,7 +223,7 @@ function alt_author_project ( $post_id ) {
           while( have_rows('alt_lab_specific_information', $post_id) ): the_row() ;
              $leads = get_sub_field('alt_lab_lead', $post_id);
               if ($leads){
-               $author = $leads->ID;            
+               $author = $leads['ID'];     //$leads->ID  ************ caution will robinson   
            }
           endwhile;
     endif;
