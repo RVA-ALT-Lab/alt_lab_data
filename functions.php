@@ -207,7 +207,7 @@ function alt_lab_lead(){
       while( have_rows('alt_lab_specific_information') ): the_row() ;
          $leads = get_sub_field('alt_lab_lead');
           if ($leads){
-            echo $leads->display_name;   //$leads['display_name'] ************ caution will robinson         
+            echo '<a href="?fwp_project_lead=' . $leads->ID . '">' . $leads->display_name . '</a>';        
        }
       endwhile;
     endif;
@@ -250,7 +250,7 @@ function alt_lab_design_pattern(){
       while( have_rows('course_specific') ): the_row() ;
          $pattern = get_sub_field('design_pattern');
            if ($pattern){
-            echo $pattern;            
+            echo '<a href="?fwp_project_type=' . sanitize_title($pattern) . '">' . $pattern . '</a>';            
           }
       endwhile;
     endif;
