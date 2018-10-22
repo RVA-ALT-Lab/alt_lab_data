@@ -8,7 +8,7 @@
 
 <?php while ( have_posts() ): the_post(); ?>
 <div class="row facet-workshop">
-		<div class="facet-data workshop-title col-md-3"><a href="<?php the_permalink(); ?>"><?php the_title() . acf_count_updates(); ?></a></div> 
+		<div class="facet-data workshop-title col-md-3 <?php alt_lab_project_status();?>"><a href="<?php the_permalink(); ?>"><?php the_title() . acf_count_updates();?></a></div> 
 		<div class="due-date facet-data col-md-2"><?php echo acf_fetch_due_date();?></div>
 		<div class="alt-lab-lead facet-data col-md-2"><?php alt_lab_lead();?></div>
 		<div class="department facet-data col-md-2"><?php project_department();?></div>

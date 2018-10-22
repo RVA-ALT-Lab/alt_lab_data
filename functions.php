@@ -257,6 +257,15 @@ function alt_lab_design_pattern(){
 }
 
 
+function alt_lab_project_status(){
+    global $post;
+    $terms = get_the_terms( $post->ID , 'state' );
+    echo sanitize_title($terms[0]->name);
+
+}
+
+
+
 
 function acf_fetch_work_start_date(){
   global $post;

@@ -52,6 +52,8 @@ $container = get_theme_mod( 'understrap_container_type' );
 							<?php echo facetwp_display( 'facet', 'project_lead');?>	
 							<h3>Type</h3>
 							<?php echo facetwp_display( 'facet', 'project_type' );?>
+							<h3>Status</h3>
+							<?php echo facetwp_display( 'facet', 'project_status' );?>
 						</div>	
 					</div>
 					<div class="col-md-10 facet-holder">
